@@ -1,0 +1,17 @@
+language: generic 
+
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t dockerryokker/docker-react of Dockerfile.dev .
+
+
+
+  # script:
+  # - docker run USERNAME/docker-react npm run test -- --coverage
+
+
+  script:
+  - docker run -e CI=true USERNAME/docker-react npm run test
