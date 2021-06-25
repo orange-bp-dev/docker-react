@@ -7,11 +7,11 @@ services:
 before_install:
   - docker build -t dockerryokker/docker-react of Dockerfile.dev .
 
+script:
+  - docker run -e CI=true SATORYOKA/docker-react npm run test
 
 
   # script:
   # - docker run USERNAME/docker-react npm run test -- --coverage
 
 
-  script:
-  - docker run -e CI=true USERNAME/docker-react npm run test
